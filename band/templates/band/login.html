@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Title of the webpage displayed on the browser tab -->
+    <title>Login</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <!-- Main heading for the login page -->
+    <h1>Login</h1>
+     <!-- Display an error message if an error variable is present -->
+    {% if error %}
+        <!-- Error message displayed in red text -->
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+     <!-- Form for user login -->
+    <form method="post">
+        <!-- CSRF token for security to prevent cross-site request forgery attacks -->
+        {% csrf_token %}
+        <!-- Input field for the username -->
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username"><br>
+        <!-- Input field for the password -->
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"><br>
+        <!-- Submit button to log in -->
+        <input type="submit" value="Login">
+    </form>
+</body>
+</html>

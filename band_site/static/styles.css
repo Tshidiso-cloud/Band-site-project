@@ -1,0 +1,31 @@
+/* Basic styles for the body */
+body {
+    font-family: Arial, sans-serif; /* Sets the font for the entire page */
+    background-color: #f4f4f4; /* Light gray background color */
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+}
+
+/* Styles for main headings */
+h1, h2 {
+    color: #333; /* Dark gray color for headings */
+}
+
+/* Navigation styles */
+nav {
+    background-color: #fff; /* White background for the navigation bar */
+    padding: 10px; /* Adds padding around the nav */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Styles for navigation links */
+nav a {
+    margin: 0 10px; /* Spacing between links */
+    text-decoration: none; /* Removes underline from links */
+    color: #007BFF; /* Blue color for links */
+}
+
+/* Hover effect for navigation links */
+nav a:hover {
+    text-decoration: underline; /* Underline links on hover */
+}

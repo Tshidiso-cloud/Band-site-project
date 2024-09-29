@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <!-- Title of the webpage displayed on the browser tab -->
+    <title>Band Events</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <!-- Main heading for the events page -->
+    <h1>Upcoming Events</h1>
+    <!-- Unordered list to display the list of events -->
+    <ul>
+        <!-- Loop through each event in the events list -->
+        {% for event in events %}
+         <!-- List item displaying event details: title, date, and description -->
+            <li>{{ event.title }} - {{ event.date }}: {{ event.description }}</li>
+        {% endfor %}
+    </ul>
+
+     <!-- Conditional link to create a new event, visible only if the user is authenticated -->
+    {% if user.is_authenticated %}
+        <a href="{% url 'create_event' %}">Create Event</a>
+    {% endif %}
+    <!-- Link to return to the home page -->
+    <a href="{% url 'home' %}">Back to Home</a>
+</body>
+</html>

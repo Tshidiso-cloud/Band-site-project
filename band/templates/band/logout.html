@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+    <!-- Metadata and other head elements can be added here -->
+</head>
+<body>
+    <!-- Header section of the page -->
+    <header>
+         <!-- Main heading indicating the user has been logged out -->
+        <h1>You have been logged out</h1>
+    </header>
+
+    <!-- Main content of the page -->
+    <main>
+        <!-- Message informing the user of a successful logout with options to log back in or return to the homepage -->
+        <p>You have successfully logged out. <a href="{% url 'login' %}">Log back in</a> or <a href="{% url 'home' %}">return to the homepage</a>.</p>
+        <!-- Conditional links based on user authentication status -->
+        {% if user.is_authenticated %}
+            <!-- Link to log out, visible only if the user is still authenticated (should not be visible after logout) -->
+            <a href="{% url 'logout' %}">Logout</a>
+        {% else %}
+            <!-- Link to log in, visible only if the user is not authenticated -->
+            <a href="{% url 'login' %}">Login</a>
+        {% endif %}
+
+    </main>
+    <!-- Footer section of the page -->
+    <footer>
+        <!-- Footer content with copyright information -->
+        <p>&copy; 2024 The Band. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% extends 'band/base.html' %}
+    {% load static %}
+      <!-- Metadata and other head elements (e.g., CSS links) -->
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <title>About the Band</title>
+</head>
+<body>
+    <header>
+        <!-- Main heading for the About page -->
+        <h2>About the Band: Good Music</h2>
+        <!-- Navigation menu -->
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'events' %}">Events</a></li>
+                <li><a href="{% url 'register' %}">Register</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Main contents of the about page -->
+    <main>
+        <!-- Section about the band's story -->
+        <section>
+            <!-- Subheading for the band's story -->
+            <h2>Our Story</h2>
+            <p>Welcome to our band’s official page! We started our musical journey in 2020 with a passion for rap and a dream of reaching fans around the world. Our music blends classic hip hop with modern influences, creating a unique sound that resonates with our audience.</p>
+        </section>
+
+        <!-- Section introducing the band members -->
+        <section>
+            <h2>Band Members</h2>
+            <ul>
+                <li>Kanye West - Lead Artist</li>
+                <li>Big Sean - Producer</li>
+                <li>Pusha T - Bass</li>
+                <li>Cyhi - Rapper</li>
+                <li>Common - Drums</li>
+            </ul>
+        </section>
+
+        <!-- Section about the band's music -->
+        <section>
+            <h2>Our Music</h2>
+            <p>Our latest album, "Good Music Vol. 1," is available now! Check out our discography and listen to our tracks on your favorite streaming platforms.</p>
+        </section>
+    </main>
+
+    <!-- Footer section of the page -->
+    <footer>
+        <p>2024 The Band. All rights reserved.</p>
+        <button onclick="window.history.back();">Go back</button>
+    </footer>
+</body>
+</html>

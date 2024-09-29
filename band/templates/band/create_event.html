@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Title of the webpage displayed on the browser tab -->
+    <title>Create Event</title>
+</head>
+<body>
+    <!-- Main heading for the create event page -->
+    <h1>Create a New Event</h1>
+
+    <!-- Form for creating a new event -->
+    <form method="post">
+        <!-- CSRF token for security to prevent cross-site request forgery attacks -->
+        {% csrf_token %}
+         <!-- Input field for the event title -->
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title"><br>
+        <!-- Input field for the event date and time -->
+        <label for="date">Date:</label>
+        <input type="datetime-local" id="date" name="date"><br>
+         <!-- Textarea for the event description -->
+        <label for="description">Description:</label>
+        <textarea id="description" name="description"></textarea><br>
+        <!-- Submit button to create the event -->
+        <input type="submit" value="Create Event">
+    </form>
+     <!-- Link to return to the events listing page -->
+    <a href="{% url 'events' %}">Back to Events</a>
+</body>
+</html>

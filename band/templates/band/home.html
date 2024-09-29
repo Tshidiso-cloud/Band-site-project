@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Title of the webpage -->
+{% extends 'band/base.html' %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <title>{% block title %}Band Home{% endblock %}</title>
+</head>
+<body>
+    <!-- Main heading for the home page -->
+{% block content %}
+    <h2>Welcome to the Good Music Hip Hop Band Website</h2>
+    <!-- Navigation menu -->
+    <nav>
+        <!-- Link to the home page -->
+        <a href="{% url 'home' %}">Home</a>
+        <!-- Link to the about page -->
+        <a href="{% url 'about' %}">About</a>
+        <!-- Link to the events page -->
+        <a href="{% url 'events' %}">Events</a>
+        <!-- Conditional links based on user authentication -->
+        {% if user.is_authenticated %}
+         <!-- Link to create a new event, visible only to authenticated users -->
+            <a href="{% url 'create_event' %}">Create Event</a>
+            <!-- Link to log out, visible only to authenticated users -->
+            <a href="{% url 'logout' %}">Logout</a>
+        {% else %}
+        <!-- Link to log in, visible only to non-authenticated users -->
+            <a href="{% url 'login' %}">Login</a>
+        {% endif %}
+    </nav>
+    
+    <!-- Description or tagline for the band -->
+    <p>Home of Good Music artists: Kanye West, Big Sean, Pusha T, Cyhi and Common.</p>
+{% endblock %}    
+</body>
+</html>
