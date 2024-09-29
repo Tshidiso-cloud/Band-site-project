@@ -31,6 +31,7 @@ class Event(models.Model):
     def __str__(self):
         '''
         Returns the title of the event when the object is printed or 
-        converted to a string.
+        converted to a string. This returns the title of the event,
+        this is an extra docstring for git.
         '''
         return self.title
