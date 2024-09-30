@@ -82,7 +82,7 @@ python manage.py runserver
 ```
 - On Mac:
 ```bash
-python manage.py runserver
+python3 manage.py runserver
 ```
 Your application will be available at http://127.0.0.1:8000/.
 
